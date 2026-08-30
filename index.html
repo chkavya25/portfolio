@@ -16,7 +16,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -37,8 +37,8 @@
     --radius:14px;
     --radius-sm:8px;
     --maxw:1180px;
-    --font-display:'Space Grotesk', sans-serif;
-    --font-body:'Inter', sans-serif;
+    --font-display:'Fraunces', serif;
+    --font-body:'Manrope', sans-serif;
     --font-mono:'JetBrains Mono', monospace;
   }
 
@@ -128,7 +128,7 @@
 
   .nav-links{ display:flex; align-items:center; gap:4px; }
   .nav-links a{
-    font-family:var(--font-mono); font-size:13px; color:var(--text-muted);
+    font-family:var(--font-body); font-weight:600; font-size:14px; color:var(--text-muted);
     padding:8px 14px; border-radius:100px; transition:color .18s ease, background-color .18s ease;
     white-space:nowrap;
   }
@@ -180,13 +180,14 @@
   section{ padding:112px 0; border-bottom:1px solid var(--border-soft); position:relative; }
   section:last-of-type{ border-bottom:none; }
   .eyebrow{
-    font-family:var(--font-mono); font-size:13px; color:var(--accent);
-    display:flex; align-items:center; gap:8px; margin-bottom:16px;
+    font-family:var(--font-body); font-weight:700; font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--accent);
+    display:flex; align-items:center; gap:10px; margin-bottom:16px;
   }
-  .eyebrow::before{ content:''; width:16px; height:1px; background:var(--accent); opacity:0.6; }
+  .eyebrow::before{ content:''; width:20px; height:1px; background:var(--accent); opacity:0.5; }
   h2.section-title{
-    font-family:var(--font-display); font-weight:600; font-size:clamp(28px, 4vw, 40px);
-    letter-spacing:-0.01em; color:var(--text); margin-bottom:14px;
+    font-family:var(--font-display); font-weight:500; font-size:clamp(30px, 4vw, 42px);
+    letter-spacing:-0.005em; color:var(--text); margin-bottom:14px;
   }
   .section-sub{
     font-size:16.5px; color:var(--text-muted); max-width:620px; line-height:1.7;
@@ -218,14 +219,21 @@
     70%{ box-shadow:0 0 0 7px rgba(110,231,196,0); }
     100%{ box-shadow:0 0 0 0 rgba(110,231,196,0); }
   }
-  .hero h1{
-    font-family:var(--font-display); font-weight:700;
-    font-size:clamp(34px, 4.6vw, 54px); line-height:1.08; letter-spacing:-0.02em;
-    color:var(--text); margin-bottom:20px;
+  .hero-name{
+    font-family:var(--font-body); font-weight:800; font-style:normal;
+    font-size:clamp(30px, 4vw, 46px); line-height:1.14; letter-spacing:-0.015em;
+    color:var(--text); margin-bottom:10px;
   }
-  .hero h1 .accent-text{ color:var(--accent); }
+  .hero-title{
+    font-family:'Fraunces', serif; font-style:italic; font-weight:400;
+    font-optical-sizing:auto;
+    font-size:clamp(19px, 2.1vw, 24px); line-height:1.4; letter-spacing:0;
+    color:var(--text-muted); margin-bottom:22px;
+  }
+  .hero-title-divider{ color:var(--text-faint); font-style:normal; padding:0 2px; }
+  .hero-title .accent-text{ color:var(--accent); font-style:italic; font-weight:400; }
   .hero-lede{
-    font-size:18px; line-height:1.7; color:var(--text-muted); max-width:520px; margin-bottom:34px;
+    font-size:18px; line-height:1.7; color:var(--text-muted); max-width:520px; margin-bottom:34px; margin-top:2px;
   }
   .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:40px; }
   .hero-meta{
@@ -426,12 +434,12 @@
       <span><span class="logo-text-full">kavya</span><span class="logo-text-dim">.dev</span></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#about">about</a>
-      <a href="#skills">skills</a>
-      <a href="#experience">experience</a>
-      <a href="#projects">projects</a>
-      <a href="#achievements">achievements</a>
-      <a href="#contact">contact</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
       <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9Db250ZW50cyA5IDAgUiAvTWVkaWFCb3ggWyAwIDAgNjEyIDc5MiBdIC9QYXJlbnQgOCAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNiAwIG9iago8PAovUGFnZU1vZGUgL1VzZU5vbmUgL1BhZ2VzIDggMCBSIC9UeXBlIC9DYXRhbG9nCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9BdXRob3IgKFwoYW5vbnltb3VzXCkpIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjA4MjkwNTIzNTMrMDAnMDAnKSAvQ3JlYXRvciAoXCh1bnNwZWNpZmllZFwpKSAvS2V5d29yZHMgKCkgL01vZERhdGUgKEQ6MjAyNjA4MjkwNTIzNTMrMDAnMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwpKSAKICAvU3ViamVjdCAoXCh1bnNwZWNpZmllZFwpKSAvVGl0bGUgKFwoYW5vbnltb3VzXCkpIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKOCAwIG9iago8PAovQ291bnQgMSAvS2lkcyBbIDUgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iago5IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDI2NjIKPj4Kc3RyZWFtCkdhdUhNPyQiXmooNEdxXFwyQDl1ams3VFtxRidDWTBqcElSZ1BqKXVxaUkuNkM1V1JiPiozIW05XlJudWdGWlJkNipYPUVsdUxjZWU1RG9bNUw0MWdraTdgLHJxXEBialYkRVVsKEIhIkhqJjlSLzZMMitcaWZrNVZINTpNVGs7KlVkXj5kJEdNaVksNU5waykkWDJGRjlcVFxFbWduNmciXi0pKTpYZVY9OU5dPTBFISgyYDUyPU5IVVgtdHJRM2BZOi10O1wuRCJlJlo3Mj9PKjEnVmcqYWsmOUUqTDomQHElIWVsJixjNVInT3NzLEgra0EsYCNVLmhcS14tTUMxR01xKlMzVElrMFZLQiFHSWRRIkdWXktjTW9vUzA4Pz5dWVxcKz0oXVw9Om9EYigvISNsNmtRXGE2PkFEODEpLnVYZG0xblZmOWI5TjxoQllZNytuSnQ5WldTOShkbWwwVHNSbUpJUWBDZXRHWUxPWUpoLj9cZ1o5WjtSVUdlLEI0OGYlclZSXCFbYnNlZlIoO0BBPzBzS1dxcUNHTTxgYUosMGsyPGlXXVooRVhrLyRwITNucVROUkFKTG1HTWxaJUljPmROcDNwQSZRTGAyb0ZSbm5qQks8XT5DTFBsYUNaYSojOjFsWy9mMDI9aiNHXXF1QypwaFJTZ2w1SClDK3FoYkxdO2Rkai9IMVYmO29tKSJUL00rYmBGWF8uT2g8akNQQDpebzAhJCdbR2olS18kSm8udWVMWHJXbDBeWTdodUlFIj1MTj1iOm0tK3JGKzlZQyYnYCFLPTJ1LENGZ3BJQWNnRF50TltNQCNbPzImSE9rQW1mbVZKPkxnYGtRUm5uIVZvRCZVOSs9IVUwa0ZlMFVWMmM/QFhcXEtBKFs+XC03ay4kOVZnRl80QUg4TVpZJ2xJU0A1KVk6VS0nbFVeZDNpbUphM2tUUklVT2hxYm1WcVtyLDk5JSVjNkRlQlRPX2ZpZG8wdGBSUnE6cFZNaCNuSyhwSytda0NqTGxPP0pHSTYyWCVsKmZSbmBlMXFWRW5oKDJwckFSSHJHSWxBTS9JJCpxUSxCNTg/M1tbTCRUSixwMk1PM1s5bE1ibCI1ZG1Ibk1uTjZhVW80NGByL0BIUmhnOjdzLDwwOlpCS3N0clRsQDQ/VEp0J0tHbjdvZEdEcmcyVGAhT1peXjFUYDc8M1xVbHVxanIwbEkpJWc+KWNJYy9BJUU+MEtgOUZObyhKOzdOTGVGIWQ3RyEjTF1BNVtmbj1CVjJXRCJmSiY8TE5DWnFNT1B0Vzl1U1I0cXBlZDVNaTdJa0A/bU1lKig9V1JTbm5rRixmLUZ1LUFWK25mO15uXkchK05kRVRxXDc5QjFnRV8kTEAtNm87cnVrTDVjaz1Na1VeQU88bFlKbEIlb1A0Um5lWWIrJj5uSyhDJkxvISxHXFJzaXU9TENDNkZJNE8hSWheZ1g9T1s9aDhQLSE/JHNFKm9sJUwwMD1vQCgqVU9dLVchQSVcaGhoJ1ZJMTomYC5FaUVuZihtNWNdYDxsQ0FOOHBgWyEqUUhTOklyUFkrPidKcXEubmdPb0RRUXNSL1VfUUk/ODtcZzoiLFczU2NWQyRPN3JUYWxMSF8vUS1BVlFWOVM5bnMhXi06LlxYU05rWkY+RkBELC1bO2A/ZDcuYDsja1gxSi9XPlAjIzQtIzMmYUcnSmAiVSoqYmVnVW4nI19jPD9OaWYjTTczO3I8JDE/SVNlbC5eOTw/WSM0aTM1UmEiXDctOTFHNmpjJU4qNThhYjEoNyFeYyRTOmFnPDJlZUVoMVp0WzZkbC0jO2JmO1ZjcS5vTzZjUEI4TTs7UClyYzksNFIuYXFaPUYkIVIlTytJST8pcl1yR3MhLSQ1XmFQcjM6JEItLUJKPGxkNyVTWCMpbEBjZW85bUonNzRbLC1oQGlsIz9EZldmRCxjSjZVaj9cMTBIa0hKWURwJVlRZ0xjKFJBXW9GWnBvXVVOaihgYy8sX0pCaT8wV1BQWTsyOFcsJCVIY2k5YlNPaXVBaD1TOFtPNmQpb21qLGxvPmdgZlNuMDZhR3EhKEEqcEclLlJDU2ZkbnJUTmMvWEVfUy5IYEM0WGJwREtWUG9FPmhbbC1nWTRnOzsiTjlCMj5PNC5FbkBqUjI5QklwbSdFRmlKKlAiNmE7JHAzXnF0XUEiYV0wbkJnQCFXMl1DYFVoNyJHbDBEJUtGV0QuK0lPUmNbIz4idCVtPFtpcCotS1ZnaTZuNz1BJkMvYjNZVEU5cDs7IWJDbWVzcl89MD1CYCFqXCQ1LkxCVVJObHNXTEdoUF02dW9TMTI1VkAkKWxMVTFrc1gkMSJPbTxFODdCcUtTXTAqQktGXWIvT04wZjRHOjVCUDlPT0M/ODJbQTQpQSssJ2VhVlVEPFJxPDY5UUljbSNcSkNkPmVfUXMkUyE8ajtdaVdhZltnV19pdCo7b1pBPCpnak5lbnMlOUNGKWE8RiFFOEQjMCltRj4kdVAuIylFZChlMSM0I04wOElbRi1ASj1Mal1qclBsKlE2Q2BoIkFIckQzRDFrRmtDQl5tMFUpYkwkYWJvIVEqYzFuNF0wLzc4aCY7RW8+bWY6TTwmdSklQmNOUiNkazIkamdJQXQyPiNqM1sjZ15CK0U/J0FbUkRJSFE7Xl1tY2lkLyQmKlFHJyxCR10jXmQ5UXRCVEVRbWUwZWRcKDlaW2E9Zl5VZScpdSFvcDBnVzo+KzQzSTRgaTVmREhDdT01IWUtbmlOYl9iSlxIYUFGT0NYbEY0RigvWkpbPHBXXjcpMkJEO1pfRUMrXl4tSEUtalBkcDksKzZybls4WmA/USJkKWJiT2lnPHBWJUBOLVBMRkNHJUBaOXJmRy1EPS5YPldtYU1cYUY3QiJwPVhAU18jIVZadVBvU1BLYixVaF1YLTxAM1dMNypoRXBmSmVRJkg0cVJSOC04I0VBWUN0OWc7P2pWZyEhazspY2JPa2AqMUFDQVI2bCxQPDRGZGJyTkFQMkpKc0dUZGFXJy1yMjhQKGAmOio+PDNCQ2BOYl4hOTpBPzVocXJrTilHW2laWUNkRWksaD5tRWxsTCopXURFdTFMN0pINCZROi5gRVk8JGZjYjo8Si5cWCQoOHJSSmNWZnBecFA0NWpfNiFvTT5XalA+Ok8oKTxtMSkoVG5Yakc7OF9CWkZIRjQhPSJpMitMWVU0TEopIzVHTW5Rc0FnKV0jVTxRUkcvWT0uVCsicWIkUW03ZnEwZTcyIk5JXEtDZ2onUml0LlpJYj1ZbyYhV2JWX2dJcjJdPkk2UUYhVnBxOyNeV1psXiUjMCMtLEVoVmBLZCdVKGMvSTkyLGEhcl9ARi9iaj9NXHNlKkQqQTA+ZzUpSWJfRShQKjRYLnFrWCgwK21AXU1bP0JtYD4rNWFHTlwocCMoXzFaQFpWNiklZld1cTlMIk1RLyhwVWpIRTRSO1tkN2FnLiRBNUk+MSNzTFAnIyhVS1pCaCtsKFtHJ2MwXmwkVFMjSj44TEcrfj5lbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCAxMAowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDExMiAwMDAwMCBuIAowMDAwMDAwMjE5IDAwMDAwIG4gCjAwMDAwMDAzMzEgMDAwMDAgbiAKMDAwMDAwMDQ0NiAwMDAwMCBuIAowMDAwMDAwNjM5IDAwMDAwIG4gCjAwMDAwMDA3MDcgMDAwMDAgbiAKMDAwMDAwMDk4NyAwMDAwMCBuIAowMDAwMDAxMDQ2IDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDkwODIxMDU4ZDg3MzRjMTBiZTQzMTc4MTBjNjY3MDkwPjw5MDgyMTA1OGQ4NzM0YzEwYmU0MzE3ODEwYzY2NzA5MD5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gNyAwIFIKL1Jvb3QgNiAwIFIKL1NpemUgMTAKPj4Kc3RhcnR4cmVmCjM3OTkKJSVFT0YK" download="Kavya_Chinthapalli_Resume.pdf" class="btn btn-ghost btn-sm btn-ghost-desktop">
@@ -444,12 +452,12 @@
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#about">// about</a>
-    <a href="#skills">// skills</a>
-    <a href="#experience">// experience</a>
-    <a href="#projects">// projects</a>
-    <a href="#achievements">// achievements</a>
-    <a href="#contact">// contact</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
     <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIKPj4KZW5kb2JqCjIgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YxIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKMyAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYS1Cb2xkIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMiAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjQgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9Db250ZW50cyA5IDAgUiAvTWVkaWFCb3ggWyAwIDAgNjEyIDc5MiBdIC9QYXJlbnQgOCAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNiAwIG9iago8PAovUGFnZU1vZGUgL1VzZU5vbmUgL1BhZ2VzIDggMCBSIC9UeXBlIC9DYXRhbG9nCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9BdXRob3IgKFwoYW5vbnltb3VzXCkpIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjA4MjkwNTIzNTMrMDAnMDAnKSAvQ3JlYXRvciAoXCh1bnNwZWNpZmllZFwpKSAvS2V5d29yZHMgKCkgL01vZERhdGUgKEQ6MjAyNjA4MjkwNTIzNTMrMDAnMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwpKSAKICAvU3ViamVjdCAoXCh1bnNwZWNpZmllZFwpKSAvVGl0bGUgKFwoYW5vbnltb3VzXCkpIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKOCAwIG9iago8PAovQ291bnQgMSAvS2lkcyBbIDUgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iago5IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDI2NjIKPj4Kc3RyZWFtCkdhdUhNPyQiXmooNEdxXFwyQDl1ams3VFtxRidDWTBqcElSZ1BqKXVxaUkuNkM1V1JiPiozIW05XlJudWdGWlJkNipYPUVsdUxjZWU1RG9bNUw0MWdraTdgLHJxXEBialYkRVVsKEIhIkhqJjlSLzZMMitcaWZrNVZINTpNVGs7KlVkXj5kJEdNaVksNU5waykkWDJGRjlcVFxFbWduNmciXi0pKTpYZVY9OU5dPTBFISgyYDUyPU5IVVgtdHJRM2BZOi10O1wuRCJlJlo3Mj9PKjEnVmcqYWsmOUUqTDomQHElIWVsJixjNVInT3NzLEgra0EsYCNVLmhcS14tTUMxR01xKlMzVElrMFZLQiFHSWRRIkdWXktjTW9vUzA4Pz5dWVxcKz0oXVw9Om9EYigvISNsNmtRXGE2PkFEODEpLnVYZG0xblZmOWI5TjxoQllZNytuSnQ5WldTOShkbWwwVHNSbUpJUWBDZXRHWUxPWUpoLj9cZ1o5WjtSVUdlLEI0OGYlclZSXCFbYnNlZlIoO0BBPzBzS1dxcUNHTTxgYUosMGsyPGlXXVooRVhrLyRwITNucVROUkFKTG1HTWxaJUljPmROcDNwQSZRTGAyb0ZSbm5qQks8XT5DTFBsYUNaYSojOjFsWy9mMDI9aiNHXXF1QypwaFJTZ2w1SClDK3FoYkxdO2Rkai9IMVYmO29tKSJUL00rYmBGWF8uT2g8akNQQDpebzAhJCdbR2olS18kSm8udWVMWHJXbDBeWTdodUlFIj1MTj1iOm0tK3JGKzlZQyYnYCFLPTJ1LENGZ3BJQWNnRF50TltNQCNbPzImSE9rQW1mbVZKPkxnYGtRUm5uIVZvRCZVOSs9IVUwa0ZlMFVWMmM/QFhcXEtBKFs+XC03ay4kOVZnRl80QUg4TVpZJ2xJU0A1KVk6VS0nbFVeZDNpbUphM2tUUklVT2hxYm1WcVtyLDk5JSVjNkRlQlRPX2ZpZG8wdGBSUnE6cFZNaCNuSyhwSytda0NqTGxPP0pHSTYyWCVsKmZSbmBlMXFWRW5oKDJwckFSSHJHSWxBTS9JJCpxUSxCNTg/M1tbTCRUSixwMk1PM1s5bE1ibCI1ZG1Ibk1uTjZhVW80NGByL0BIUmhnOjdzLDwwOlpCS3N0clRsQDQ/VEp0J0tHbjdvZEdEcmcyVGAhT1peXjFUYDc8M1xVbHVxanIwbEkpJWc+KWNJYy9BJUU+MEtgOUZObyhKOzdOTGVGIWQ3RyEjTF1BNVtmbj1CVjJXRCJmSiY8TE5DWnFNT1B0Vzl1U1I0cXBlZDVNaTdJa0A/bU1lKig9V1JTbm5rRixmLUZ1LUFWK25mO15uXkchK05kRVRxXDc5QjFnRV8kTEAtNm87cnVrTDVjaz1Na1VeQU88bFlKbEIlb1A0Um5lWWIrJj5uSyhDJkxvISxHXFJzaXU9TENDNkZJNE8hSWheZ1g9T1s9aDhQLSE/JHNFKm9sJUwwMD1vQCgqVU9dLVchQSVcaGhoJ1ZJMTomYC5FaUVuZihtNWNdYDxsQ0FOOHBgWyEqUUhTOklyUFkrPidKcXEubmdPb0RRUXNSL1VfUUk/ODtcZzoiLFczU2NWQyRPN3JUYWxMSF8vUS1BVlFWOVM5bnMhXi06LlxYU05rWkY+RkBELC1bO2A/ZDcuYDsja1gxSi9XPlAjIzQtIzMmYUcnSmAiVSoqYmVnVW4nI19jPD9OaWYjTTczO3I8JDE/SVNlbC5eOTw/WSM0aTM1UmEiXDctOTFHNmpjJU4qNThhYjEoNyFeYyRTOmFnPDJlZUVoMVp0WzZkbC0jO2JmO1ZjcS5vTzZjUEI4TTs7UClyYzksNFIuYXFaPUYkIVIlTytJST8pcl1yR3MhLSQ1XmFQcjM6JEItLUJKPGxkNyVTWCMpbEBjZW85bUonNzRbLC1oQGlsIz9EZldmRCxjSjZVaj9cMTBIa0hKWURwJVlRZ0xjKFJBXW9GWnBvXVVOaihgYy8sX0pCaT8wV1BQWTsyOFcsJCVIY2k5YlNPaXVBaD1TOFtPNmQpb21qLGxvPmdgZlNuMDZhR3EhKEEqcEclLlJDU2ZkbnJUTmMvWEVfUy5IYEM0WGJwREtWUG9FPmhbbC1nWTRnOzsiTjlCMj5PNC5FbkBqUjI5QklwbSdFRmlKKlAiNmE7JHAzXnF0XUEiYV0wbkJnQCFXMl1DYFVoNyJHbDBEJUtGV0QuK0lPUmNbIz4idCVtPFtpcCotS1ZnaTZuNz1BJkMvYjNZVEU5cDs7IWJDbWVzcl89MD1CYCFqXCQ1LkxCVVJObHNXTEdoUF02dW9TMTI1VkAkKWxMVTFrc1gkMSJPbTxFODdCcUtTXTAqQktGXWIvT04wZjRHOjVCUDlPT0M/ODJbQTQpQSssJ2VhVlVEPFJxPDY5UUljbSNcSkNkPmVfUXMkUyE8ajtdaVdhZltnV19pdCo7b1pBPCpnak5lbnMlOUNGKWE8RiFFOEQjMCltRj4kdVAuIylFZChlMSM0I04wOElbRi1ASj1Mal1qclBsKlE2Q2BoIkFIckQzRDFrRmtDQl5tMFUpYkwkYWJvIVEqYzFuNF0wLzc4aCY7RW8+bWY6TTwmdSklQmNOUiNkazIkamdJQXQyPiNqM1sjZ15CK0U/J0FbUkRJSFE7Xl1tY2lkLyQmKlFHJyxCR10jXmQ5UXRCVEVRbWUwZWRcKDlaW2E9Zl5VZScpdSFvcDBnVzo+KzQzSTRgaTVmREhDdT01IWUtbmlOYl9iSlxIYUFGT0NYbEY0RigvWkpbPHBXXjcpMkJEO1pfRUMrXl4tSEUtalBkcDksKzZybls4WmA/USJkKWJiT2lnPHBWJUBOLVBMRkNHJUBaOXJmRy1EPS5YPldtYU1cYUY3QiJwPVhAU18jIVZadVBvU1BLYixVaF1YLTxAM1dMNypoRXBmSmVRJkg0cVJSOC04I0VBWUN0OWc7P2pWZyEhazspY2JPa2AqMUFDQVI2bCxQPDRGZGJyTkFQMkpKc0dUZGFXJy1yMjhQKGAmOio+PDNCQ2BOYl4hOTpBPzVocXJrTilHW2laWUNkRWksaD5tRWxsTCopXURFdTFMN0pINCZROi5gRVk8JGZjYjo8Si5cWCQoOHJSSmNWZnBecFA0NWpfNiFvTT5XalA+Ok8oKTxtMSkoVG5Yakc7OF9CWkZIRjQhPSJpMitMWVU0TEopIzVHTW5Rc0FnKV0jVTxRUkcvWT0uVCsicWIkUW03ZnEwZTcyIk5JXEtDZ2onUml0LlpJYj1ZbyYhV2JWX2dJcjJdPkk2UUYhVnBxOyNeV1psXiUjMCMtLEVoVmBLZCdVKGMvSTkyLGEhcl9ARi9iaj9NXHNlKkQqQTA+ZzUpSWJfRShQKjRYLnFrWCgwK21AXU1bP0JtYD4rNWFHTlwocCMoXzFaQFpWNiklZld1cTlMIk1RLyhwVWpIRTRSO1tkN2FnLiRBNUk+MSNzTFAnIyhVS1pCaCtsKFtHJ2MwXmwkVFMjSj44TEcrfj5lbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCAxMAowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDExMiAwMDAwMCBuIAowMDAwMDAwMjE5IDAwMDAwIG4gCjAwMDAwMDAzMzEgMDAwMDAgbiAKMDAwMDAwMDQ0NiAwMDAwMCBuIAowMDAwMDAwNjM5IDAwMDAwIG4gCjAwMDAwMDA3MDcgMDAwMDAgbiAKMDAwMDAwMDk4NyAwMDAwMCBuIAowMDAwMDAxMDQ2IDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDkwODIxMDU4ZDg3MzRjMTBiZTQzMTc4MTBjNjY3MDkwPjw5MDgyMTA1OGQ4NzM0YzEwYmU0MzE3ODEwYzY2NzA5MD5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gNyAwIFIKL1Jvb3QgNiAwIFIKL1NpemUgMTAKPj4Kc3RhcnR4cmVmCjM3OTkKJSVFT0YK" download="Kavya_Chinthapalli_Resume.pdf">↓ download resume</a>
   </div>
 </header>
@@ -460,7 +468,8 @@
     <div class="wrap hero-grid">
       <div>
         <div class="status-pill"><span class="status-dot" aria-hidden="true"></span>Open to opportunities</div>
-        <h1>Kavya Durga Sri Lakshmi Chintapalli —<br>building clean, <span class="accent-text">AI-assisted</span> web experiences.</h1>
+        <h1 class="hero-name">Kavya Durga Sri Lakshmi Chintapalli</h1>
+        <p class="hero-title">Frontend Developer <span class="hero-title-divider">·</span> <span class="accent-text">Crafted with AI</span></p>
         <p class="hero-lede">
           IT undergraduate and frontend-focused web developer, currently exploring how AI tooling like the Gemini API
           can make everyday code review, debugging, and shipping faster and more reliable.
@@ -500,7 +509,7 @@
     <div class="wrap">
       <div class="about-grid">
         <div class="reveal">
-          <div class="eyebrow">// 01 — about</div>
+          <div class="eyebrow">About</div>
           <h2 class="section-title">A little about my work</h2>
           <div class="about-text">
             <p>
@@ -556,7 +565,7 @@
   <section id="skills">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">// 02 — skills</div>
+        <div class="eyebrow">Skills</div>
         <h2 class="section-title">Skills &amp; technologies</h2>
         <p class="section-sub">The languages, tools, and concepts I use to build and ship projects.</p>
       </div>
@@ -632,7 +641,7 @@
   <section id="experience">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">// 03 — experience</div>
+        <div class="eyebrow">Experience</div>
         <h2 class="section-title">Professional experience</h2>
         <p class="section-sub">Internship and industrial training where I put frontend and full-stack fundamentals into practice.</p>
       </div>
@@ -669,7 +678,7 @@
   <section id="projects">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">// 04 — projects</div>
+        <div class="eyebrow">Projects</div>
         <h2 class="section-title">Projects &amp; case studies</h2>
         <p class="section-sub">Two projects where I designed the frontend and, in one case, integrated AI to make the tool genuinely useful.</p>
       </div>
@@ -714,7 +723,7 @@
   <section id="achievements">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">// 05 — achievements &amp; certifications</div>
+        <div class="eyebrow">Achievements &amp; Certifications</div>
         <h2 class="section-title">Achievements &amp; certifications</h2>
         <p class="section-sub">Recognition and credentials from hackathons, self-paced learning, and structured bootcamps.</p>
       </div>
